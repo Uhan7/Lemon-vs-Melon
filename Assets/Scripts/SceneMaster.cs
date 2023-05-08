@@ -8,22 +8,35 @@ public class SceneMaster : MonoBehaviour
 
     private GameObject mouse;
 
+    public GameObject theRock;
+
+    private bool reloading;
+
     void Start()
     {
+        theRock.SetActive(false);
         mouse = GameObject.Find("Mouse");
+
+        reloading = false;
     }
 
     private void Update()
     {
 
-        if (Input.GetKey(KeyCode.R))
+        if (Input.GetKey(KeyCode.R) && GameMaster.isWin)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            GameMaster.isWin = false;
         }
 
         if (mouse == null)
         {
-            Invoke("ReloadScene", 3);
+            if (reloading == false)
+            {
+                theRock.SetActive(true);
+                Invoke("ReloadScene", 2);
+                reloading = true;
+            }
         }
     }
 

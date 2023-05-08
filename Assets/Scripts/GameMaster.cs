@@ -8,12 +8,16 @@ public class GameMaster : MonoBehaviour
 {
 
     private AudioSource asource;
-    public static GameObject BGM;
+
+    public static GameObject BGMinstance;
+    public GameObject BGM;
 
     public static int lemonScore = 0;
     public GameObject[] lemonPoints;
     public static int melonScore = 0;
     public GameObject[] melonPoints;
+
+    public static bool isWin = false;
 
     public float pointVisibility;
 
@@ -28,6 +32,13 @@ public class GameMaster : MonoBehaviour
     void Awake()
     {
         Time.timeScale = speedModification;
+
+        if (BGMinstance == null)
+        {
+            BGMinstance = BGM;
+            DontDestroyOnLoad(BGMinstance);
+        }
+        else Destroy(BGM);
     }
 
     void Start()
@@ -116,17 +127,19 @@ public class GameMaster : MonoBehaviour
 
         if (lemonScore >= winningScore)
         {
+            isWin = true;
             Time.timeScale = 0;
             winScreen.SetActive(true);
-            winnerText.text = "Lemon Wins !";
+            winnerText.text = "Lemon Wins !\nPress 'R' to reset";
             melonScore = 0;
             lemonScore = 0;
         }
         if (melonScore >= winningScore)
         {
+            isWin = true;
             Time.timeScale = 0;
             winScreen.SetActive(true);
-            winnerText.text = "Melon Wins !";
+            winnerText.text = "Melon Wins !\nPress 'R' to reset";
             melonScore = 0;
             lemonScore = 0;
 
