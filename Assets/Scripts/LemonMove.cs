@@ -104,12 +104,10 @@ public class LemonMove : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, -maxSpeedY);
         }
 
-        if (rb.velocity.magnitude > maxSpeedX)
+        if (rb.velocity.magnitude > Mathf.Sqrt(maxSpeedY + maxSpeedX))
         {
             rb.velocity = rb.velocity.normalized;
         }
-
-        Debug.Log(rb.velocity.magnitude);
 
         rb.velocity = new Vector2(rb.velocity.x * friction, rb.velocity.y * friction);
     }

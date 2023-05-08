@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Lemon Hole
+  - Melon Hole
+  - Cat
+  - Mouse
+  - Wall
+  - BGM
   layers:
   - Default
   - TransparentFX

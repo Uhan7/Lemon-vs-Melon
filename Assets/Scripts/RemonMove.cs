@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MelonMove : MonoBehaviour
+public class RemonMove : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Animator anim;
@@ -38,19 +38,19 @@ public class MelonMove : MonoBehaviour
         moveUp = false;
         moveDown = false;
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.J))
         {
             moveLeft = true;
         }
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.L))
         {
             moveRight = true;
         }
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.I))    
         {
             moveUp = true;
         }
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.K))
         {
             moveDown = true;
         }
