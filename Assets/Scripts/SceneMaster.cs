@@ -8,13 +8,10 @@ public class SceneMaster : MonoBehaviour
 
     private GameObject mouse;
 
-    public GameObject theRock;
-
     private bool reloading;
 
     void Start()
     {
-        theRock.SetActive(false);
         mouse = GameObject.Find("Mouse");
 
         reloading = false;
@@ -33,7 +30,6 @@ public class SceneMaster : MonoBehaviour
         {
             if (reloading == false)
             {
-                theRock.SetActive(true);
                 Invoke("ReloadScene", 2);
                 reloading = true;
             }
