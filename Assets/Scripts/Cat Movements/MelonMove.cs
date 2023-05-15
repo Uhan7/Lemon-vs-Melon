@@ -7,20 +7,12 @@ public class MelonMove : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
 
-    public float speedX;
-    public float speedY;
+    public float speed;
+    public float maxSpeed;
+    public float decaySpeed;
+    public float rotationSpeed;
 
-    public float maxSpeedX;
-    public float maxSpeedY;
-
-    public float friction;
-
-    private bool moveLeft;
-    private bool moveRight;
-    private bool moveUp;
-    private bool moveDown;
-
-    public float rotationTime;
+    private bool moving;
 
     void Start()
     {
@@ -33,83 +25,36 @@ public class MelonMove : MonoBehaviour
 
         anim.SetFloat("Speed", rb.velocity.magnitude);
 
-        moveLeft = false;
-        moveRight = false;
-        moveUp = false;
-        moveDown = false;
+        if (Input.GetKey(KeyCode.P))
+        {
+            moving = true;
+        }
+        else
+        {
+            moving = false;
+        }
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKeyUp(KeyCode.P))
         {
-            moveLeft = true;
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            moveRight = true;
-        }
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            moveUp = true;
-        }
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            moveDown = true;
+            rotationSpeed *= -1;
         }
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-
-        if (moveLeft)
+        if (rb.velocity.magnitude > maxSpeed || !moving)
         {
-            rb.AddForce(Vector2.left * speedX);
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, 90), rotationTime);
+            rb.velocity *= decaySpeed;
         }
-        if (moveRight)
+        else if (moving)
         {
-            rb.AddForce(Vector2.right * speedX);
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, 270), rotationTime);
-        }
-        if (moveUp)
-        {
-            rb.AddForce(Vector2.up * speedY);
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, 0), rotationTime);
-        }
-        if (moveDown)
-        {
-            rb.AddForce(Vector2.down * speedY);
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, 180), rotationTime);
-        }
-        if (moveLeft && moveUp) transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, 45), rotationTime);
-        if (moveLeft && moveDown) transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, 135), rotationTime);
-        if (moveRight && moveDown) transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, 225), rotationTime);
-        if (moveRight && moveUp) transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, 315), rotationTime);
-
-        if (rb.velocity.x > maxSpeedX)
-        {
-            rb.velocity = new Vector2(maxSpeedX, rb.velocity.y);
+            rb.AddForce(transform.up * speed);
         }
 
-        if (rb.velocity.x < -maxSpeedX)
+        if (!moving)
         {
-            rb.velocity = new Vector2(-maxSpeedX, rb.velocity.y);
+            transform.Rotate(Vector3.forward * (rotationSpeed));
         }
-
-        if (rb.velocity.y > maxSpeedY)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, maxSpeedY);
-        }
-
-        if (rb.velocity.y < -maxSpeedY)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, -maxSpeedY);
-        }
-
-        if (rb.velocity.magnitude > Mathf.Sqrt(maxSpeedY + maxSpeedX))
-        {
-            rb.velocity = rb.velocity.normalized;
-        }
-
-        rb.velocity = new Vector2(rb.velocity.x * friction, rb.velocity.y * friction);
     }
 
 }

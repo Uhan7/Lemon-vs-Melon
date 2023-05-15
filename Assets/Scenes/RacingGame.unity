@@ -1688,7 +1688,7 @@ GameObject:
   - component: {fileID: 1953623177}
   - component: {fileID: 1953623176}
   - component: {fileID: 1953623175}
-  - component: {fileID: 1953623174}
+  - component: {fileID: 1953623181}
   m_Layer: 6
   m_Name: Melon
   m_TagString: Cat
@@ -1696,24 +1696,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1953623174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1953623173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 451885dfe62214bfca9316b14c7fa8ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speedX: 10
-  speedY: 10
-  maxSpeedX: 50
-  maxSpeedY: 50
-  friction: 0.8
-  rotationTime: 0.2
 --- !u!114 &1953623175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1853,6 +1835,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1953623181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953623173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d456825de35bb4e4396220b93e64e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 7
+  maxSpeed: 70
+  decaySpeed: 0.975
+  rotationSpeed: 8
 --- !u!1 &1960894027
 GameObject:
   m_ObjectHideFlags: 0
