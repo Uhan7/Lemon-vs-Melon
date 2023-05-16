@@ -30,15 +30,13 @@ public class Mouse : MonoBehaviour
         {
             case "Lemon Hole":
                 Instantiate(deathFX, transform.position, transform.rotation);
-                GameMaster.melonScore++;
-                Debug.Log("Melon Score : " + GameMaster.melonScore);
+                GameMaster.lemonScore++;
                 Destroy(gameObject);
                 break;
 
             case "Melon Hole":
                 Instantiate(deathFX, transform.position, transform.rotation);
-                GameMaster.lemonScore++;
-                Debug.Log("Lemon Score : " + GameMaster.lemonScore);
+                GameMaster.melonScore++;
                 Destroy(gameObject);
                 break;
 

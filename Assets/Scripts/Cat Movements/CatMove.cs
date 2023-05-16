@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MelonMove : MonoBehaviour
+public class CatMove : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Animator anim;
+
+    public KeyCode moveKey;
 
     public float speed;
     public float maxSpeed;
@@ -25,7 +27,7 @@ public class MelonMove : MonoBehaviour
 
         anim.SetFloat("Speed", rb.velocity.magnitude);
 
-        if (Input.GetKey(KeyCode.P))
+        if (Input.GetKey(moveKey))
         {
             moving = true;
         }
@@ -34,7 +36,7 @@ public class MelonMove : MonoBehaviour
             moving = false;
         }
 
-        if (Input.GetKeyUp(KeyCode.P))
+        if (Input.GetKeyUp(moveKey))
         {
             rotationSpeed *= -1;
         }
