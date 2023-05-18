@@ -1431,7 +1431,6 @@ GameObject:
   - component: {fileID: 1766887606}
   - component: {fileID: 1766887605}
   - component: {fileID: 1766887604}
-  - component: {fileID: 1766887603}
   - component: {fileID: 1766887610}
   m_Layer: 6
   m_Name: Lemon
@@ -1440,20 +1439,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1766887603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1766887602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72a6e11f1c3a44c1ab9edf1f464fbb55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amCat: 1
-  amMouse: 0
 --- !u!70 &1766887604
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1588,15 +1573,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1766887602}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 303fee967913548e98530517b9489806, type: 3}
+  m_Script: {fileID: 11500000, guid: 70cdc1a41f17142efa4ea58406c3f6f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedX: 14
-  speedY: 14
-  maxSpeedX: 70
-  maxSpeedY: 70
-  friction: 0.99
-  rotationTime: 0.2
+  bumpKey: 32
+  bumpForce: 500
+  bumpDecay: 0.5
 --- !u!1 &1799067254
 GameObject:
   m_ObjectHideFlags: 0
@@ -1844,13 +1826,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1953623173}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d456825de35bb4e4396220b93e64e058, type: 3}
+  m_Script: {fileID: 11500000, guid: 097c4935a6ff30744b6fc39e7284e515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
-  maxSpeed: 70
+  moveKey: 112
+  speed: 7.5
+  maxSpeed: 50
   decaySpeed: 0.975
-  rotationSpeed: 8
+  rotationSpeed: 7
 --- !u!1 &1960894027
 GameObject:
   m_ObjectHideFlags: 0
