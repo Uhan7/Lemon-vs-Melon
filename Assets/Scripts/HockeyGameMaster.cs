@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class GameMaster : MonoBehaviour
+public class HockeyGameMaster : MonoBehaviour
 {
 
     private AudioSource asource;
@@ -13,9 +13,13 @@ public class GameMaster : MonoBehaviour
     public GameObject BGM;
 
     public static int lemonScore = 0;
-    public GameObject[] lemonPoints;
+    public GameObject[] lemonMice;
     public static int melonScore = 0;
-    public GameObject[] melonPoints;
+    public GameObject[] melonMice;
+    public static int rambonScore = 0;
+    public GameObject[] rambonMice;
+    public static int clemonScore = 0;
+    public GameObject[] clemonMice;
 
     public static bool isWin = false;
 
@@ -49,80 +53,24 @@ public class GameMaster : MonoBehaviour
     void Update()
     {
 
-        switch (lemonScore)
+        for (int i = 0; i < lemonScore; i++)
         {
-            case 1:
-                lemonPoints[0].GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, pointVisibility);
-                break;
-
-            case 2:
-                for (int i = 0; i < 2; i++)
-                {
-                    lemonPoints[i].GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, pointVisibility);
-                }
-                break;
-
-            case 3:
-                for (int i = 0; i < 3; i++)
-                {
-                    lemonPoints[i].GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, pointVisibility);
-                }
-                break;
-
-            case 4:
-                for (int i = 0; i < 4; i++)
-                {
-                    lemonPoints[i].GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, pointVisibility);
-                }
-                break;
-
-            case 5:
-                for (int i = 0; i < 5; i++)
-                {
-                    lemonPoints[i].GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, pointVisibility);
-                }
-                break;
-
-            default:
-                break;
+            lemonMice[i].GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, pointVisibility);
         }
 
-        switch (melonScore)
+        for (int i = 0; i < melonScore; i++)
         {
-            case 1:
-                melonPoints[0].GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, pointVisibility);
-                break;
+            melonMice[i].GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, pointVisibility);
+        }
 
-            case 2:
-                for (int i = 0; i < 2; i++)
-                {
-                    melonPoints[i].GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, pointVisibility);
-                }
-                break;
+        for (int i = 0; i < rambonScore; i++)
+        {
+            rambonMice[i].GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, pointVisibility);
+        }
 
-            case 3:
-                for (int i = 0; i < 3; i++)
-                {
-                    melonPoints[i].GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, pointVisibility);
-                }
-                break;
-
-            case 4:
-                for (int i = 0; i < 4; i++)
-                {
-                    melonPoints[i].GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, pointVisibility);
-                }
-                break;
-
-            case 5:
-                for (int i = 0; i < 5; i++)
-                {
-                    melonPoints[i].GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, pointVisibility);
-                }
-                break;
-
-            default:
-                break;
+        for (int i = 0; i < clemonScore; i++)
+        {
+            clemonMice[i].GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, pointVisibility);
         }
 
         if (lemonScore >= winningScore)
@@ -142,7 +90,24 @@ public class GameMaster : MonoBehaviour
             winnerText.text = "Melon Wins !\nPress 'R' to reset";
             melonScore = 0;
             lemonScore = 0;
-
+        }
+        if (rambonScore >= winningScore)
+        {
+            isWin = true;
+            Time.timeScale = 0;
+            winScreen.SetActive(true);
+            winnerText.text = "Rambon Wins !\nPress 'R' to reset";
+            melonScore = 0;
+            lemonScore = 0;
+        }
+        if (clemonScore >= winningScore)
+        {
+            isWin = true;
+            Time.timeScale = 0;
+            winScreen.SetActive(true);
+            winnerText.text = "Clemon Wins !\nPress 'R' to reset";
+            melonScore = 0;
+            lemonScore = 0;
         }
     }
 

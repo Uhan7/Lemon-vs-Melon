@@ -10,6 +10,8 @@ TagManager:
   - Mouse
   - Wall
   - BGM
+  - Rambon Hole
+  - Clemon Hole
   layers:
   - Default
   - TransparentFX

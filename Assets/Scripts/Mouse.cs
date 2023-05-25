@@ -30,13 +30,25 @@ public class Mouse : MonoBehaviour
         {
             case "Lemon Hole":
                 Instantiate(deathFX, transform.position, transform.rotation);
-                GameMaster.lemonScore++;
+                HockeyGameMaster.lemonScore++;
                 Destroy(gameObject);
                 break;
 
             case "Melon Hole":
                 Instantiate(deathFX, transform.position, transform.rotation);
-                GameMaster.melonScore++;
+                HockeyGameMaster.melonScore++;
+                Destroy(gameObject);
+                break;
+
+            case "Rambon Hole":
+                Instantiate(deathFX, transform.position, transform.rotation);
+                HockeyGameMaster.rambonScore++;
+                Destroy(gameObject);
+                break;
+
+            case "Clemon Hole":
+                Instantiate(deathFX, transform.position, transform.rotation);
+                HockeyGameMaster.clemonScore++;
                 Destroy(gameObject);
                 break;
 

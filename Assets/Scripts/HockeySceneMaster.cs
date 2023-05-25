@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneMaster : MonoBehaviour
+public class HockeySceneMaster : MonoBehaviour
 {
 
     private GameObject mouse;
@@ -20,10 +20,10 @@ public class SceneMaster : MonoBehaviour
     private void Update()
     {
 
-        if (Input.GetKey(KeyCode.R) && GameMaster.isWin)
+        if (Input.GetKey(KeyCode.R) && HockeyGameMaster.isWin)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            GameMaster.isWin = false;
+            HockeyGameMaster.isWin = false;
         }
 
         if (mouse == null)

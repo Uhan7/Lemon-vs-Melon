@@ -352,7 +352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 097c4935a6ff30744b6fc39e7284e515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveKey: 113
+  moveKey: 32
   speed: 80
   maxSpeed: 8
   decaySpeed: 0.8
@@ -1148,19 +1148,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BGM: {fileID: 729594276}
-  lemonPoints:
+  lemonMice:
   - {fileID: 875638707}
   - {fileID: 748302400}
   - {fileID: 672240065}
   - {fileID: 1921532421}
   - {fileID: 716440845}
-  melonPoints:
+  melonMice:
   - {fileID: 1916182670}
   - {fileID: 332796062}
   - {fileID: 1757241976}
   - {fileID: 1498769164}
   - {fileID: 532758243}
-  pointVisibility: 0.6
+  rambonMice: []
+  clemonMice: []
+  pointVisibility: 0.65
   winningScore: 5
   winScreen: {fileID: 582283714}
   winnerText: {fileID: 703028232}
@@ -2352,7 +2354,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1326905929}
   m_Layer: 0
-  m_Name: Lemon Score
+  m_Name: Lemon Mice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
