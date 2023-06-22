@@ -29,7 +29,8 @@ public class HockeyGameMaster : MonoBehaviour
 
     public GameObject winScreen;
 
-    public TextMeshProUGUI winnerText;
+    public Image winnerImage;
+    public Sprite[] winningSprite;
 
     public float speedModification = 1;
 
@@ -77,8 +78,8 @@ public class HockeyGameMaster : MonoBehaviour
         {
             isWin = true;
             Time.timeScale = 0;
+            winnerImage.sprite = winningSprite[0];
             winScreen.SetActive(true);
-            winnerText.text = "Lemon Wins !\nPress 'R' to reset";
             melonScore = 0;
             lemonScore = 0;
         }
@@ -86,8 +87,8 @@ public class HockeyGameMaster : MonoBehaviour
         {
             isWin = true;
             Time.timeScale = 0;
+            winnerImage.sprite = winningSprite[1];
             winScreen.SetActive(true);
-            winnerText.text = "Melon Wins !\nPress 'R' to reset";
             melonScore = 0;
             lemonScore = 0;
         }
@@ -95,8 +96,8 @@ public class HockeyGameMaster : MonoBehaviour
         {
             isWin = true;
             Time.timeScale = 0;
+            winnerImage.sprite = winningSprite[2];
             winScreen.SetActive(true);
-            winnerText.text = "Rambon Wins !\nPress 'R' to reset";
             melonScore = 0;
             lemonScore = 0;
         }
@@ -104,8 +105,8 @@ public class HockeyGameMaster : MonoBehaviour
         {
             isWin = true;
             Time.timeScale = 0;
+            winnerImage.sprite = winningSprite[3];
             winScreen.SetActive(true);
-            winnerText.text = "Clemon Wins !\nPress 'R' to reset";
             melonScore = 0;
             lemonScore = 0;
         }
