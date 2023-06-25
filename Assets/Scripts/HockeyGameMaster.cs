@@ -29,8 +29,7 @@ public class HockeyGameMaster : MonoBehaviour
 
     public GameObject winScreen;
 
-    public Image winnerImage;
-    public Sprite[] winningSprite;
+    public GameObject[] winningScreen;
 
     public float speedModification = 1;
 
@@ -50,6 +49,10 @@ public class HockeyGameMaster : MonoBehaviour
     {
         asource = GetComponent<AudioSource>();
         winScreen.SetActive(false);
+        foreach (GameObject screen in winningScreen)
+        {
+            screen.SetActive(false);
+        }
     }
     void Update()
     {
@@ -77,8 +80,7 @@ public class HockeyGameMaster : MonoBehaviour
         if (lemonScore >= winningScore)
         {
             isWin = true;
-            Time.timeScale = 0;
-            winnerImage.sprite = winningSprite[0];
+            winningScreen[0].SetActive(true);
             winScreen.SetActive(true);
             melonScore = 0;
             lemonScore = 0;
@@ -86,8 +88,7 @@ public class HockeyGameMaster : MonoBehaviour
         if (melonScore >= winningScore)
         {
             isWin = true;
-            Time.timeScale = 0;
-            winnerImage.sprite = winningSprite[1];
+            winningScreen[1].SetActive(true);
             winScreen.SetActive(true);
             melonScore = 0;
             lemonScore = 0;
@@ -95,8 +96,7 @@ public class HockeyGameMaster : MonoBehaviour
         if (rambonScore >= winningScore)
         {
             isWin = true;
-            Time.timeScale = 0;
-            winnerImage.sprite = winningSprite[2];
+            winningScreen[2].SetActive(true);
             winScreen.SetActive(true);
             melonScore = 0;
             lemonScore = 0;
@@ -104,8 +104,7 @@ public class HockeyGameMaster : MonoBehaviour
         if (clemonScore >= winningScore)
         {
             isWin = true;
-            Time.timeScale = 0;
-            winnerImage.sprite = winningSprite[3];
+            winningScreen[3].SetActive(true);
             winScreen.SetActive(true);
             melonScore = 0;
             lemonScore = 0;

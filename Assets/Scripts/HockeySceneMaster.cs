@@ -26,7 +26,7 @@ public class HockeySceneMaster : MonoBehaviour
             HockeyGameMaster.isWin = false;
         }
 
-        if (mouse == null)
+        if (mouse == null && !HockeyGameMaster.isWin)
         {
             if (reloading == false)
             {
