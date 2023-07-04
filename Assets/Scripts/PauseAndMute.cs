@@ -7,16 +7,37 @@ public class PauseAndMute: MonoBehaviour
 
     public GameObject PauseMenu;
 
+    public GameObject[] Buttons;
+    private int buttonNum;
+
     private bool paused;
     private bool muted;
 
     void Start()
     {
         paused = false;
+        buttonNum = 0;
     }
 
     public void Pause()
     {
+
+        if (Buttons[buttonNum].activeInHierarchy)
+        {
+            if (buttonNum == 7)
+            {
+                Buttons[buttonNum].SetActive(false);
+                buttonNum = 0;
+                Buttons[buttonNum].SetActive(true);
+            }
+            else
+            {
+                Buttons[buttonNum].SetActive(false);
+                buttonNum++;
+                Buttons[buttonNum].SetActive(true);
+            }
+        }
+
         if (!paused)
         {
             paused = true;
