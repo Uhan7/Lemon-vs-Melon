@@ -24,18 +24,9 @@ public class PauseAndMute: MonoBehaviour
 
         if (Buttons[buttonNum].activeInHierarchy)
         {
-            if (buttonNum == 7)
-            {
-                Buttons[buttonNum].SetActive(false);
-                buttonNum = 0;
-                Buttons[buttonNum].SetActive(true);
-            }
-            else
-            {
-                Buttons[buttonNum].SetActive(false);
-                buttonNum++;
-                Buttons[buttonNum].SetActive(true);
-            }
+            Buttons[buttonNum].SetActive(false);
+            buttonNum = (buttonNum + 1) % 8;
+            Buttons[buttonNum].SetActive(true);
         }
 
         if (!paused)

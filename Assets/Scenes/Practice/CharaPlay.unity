@@ -488,8 +488,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cat: {fileID: 1596345120}
-  cat1Image: {fileID: 21300000, guid: e6b958f7cd2e36d4ba548af68a6e31f9, type: 3}
-  cat2Image: {fileID: 21300000, guid: 6c9d47d8b94765b49a2c1df4367a11a2, type: 3}
+  cat0Image: {fileID: 21300000, guid: e6b958f7cd2e36d4ba548af68a6e31f9, type: 3}
+  cat1Image: {fileID: 21300000, guid: 6c9d47d8b94765b49a2c1df4367a11a2, type: 3}
   gameText: {fileID: 585075573}
 --- !u!1 &944274685
 GameObject:
