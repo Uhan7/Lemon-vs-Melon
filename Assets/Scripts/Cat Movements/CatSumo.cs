@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CatBump : MonoBehaviour
+public class CatSumo : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Animator anim;
@@ -38,6 +38,14 @@ public class CatBump : MonoBehaviour
         else
         {
             rb.velocity *= bumpDecay;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("Sumo Ring"))
+        {
+            Destroy(gameObject);
         }
     }
 
